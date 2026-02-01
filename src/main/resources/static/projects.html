@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Atharva</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .project-card {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            transition: opacity 0.3s;
+        }
+
+        .project-card:hover {
+            opacity: 0.8;
+        }
+
+        .project-number {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: 300;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        <section class="section">
+            <h4 class="nav-number" style="font-size: 1rem; margin-bottom: 2rem; color: var(--accent-color);">02 Projects
+            </h4>
+
+            <div class="project-list">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <span class="project-number">01</span>
+                    <div>
+                        <h3 class="project-title">E-Commerce Backend</h3>
+                        <p>A robust backend system for an online store featuring user authentication, product
+                            management, and order processing.</p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">Hibernate</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <span class="project-number">02</span>
+                    <div>
+                        <h3 class="project-title">Task Management API</h3>
+                        <p>RESTful API for managing tasks and projects with real-time updates and team collaboration
+                            features.</p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">REST API</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <span class="project-number">03</span>
+                    <div>
+                        <h3 class="project-title">Inventory System</h3>
+                        <p>Comprehensive inventory management solution for tracking stock levels, suppliers, and sales
+                            data.</p>
+                        <div class="project-tags">
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Maven</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div style="margin-top: 4rem;">
+                <a href="#" class="btn">View All Projects on GitHub</a>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/cursor.js"></script>
+</body>
+
+</html>
