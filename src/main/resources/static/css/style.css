@@ -345,28 +345,34 @@ p {
     padding: 4rem 0;
 }
 
-/* Mobile Responsiveness */
 /* Mobile Responsiveness & Tablet Support */
 @media (max-width: 1024px) {
 
     /* Navbar Container */
     .navbar {
-        padding: 1.5rem 2rem;
+        height: 80px;
+        padding: 0 1.5rem;
+        /* Simplified padding to just sides */
+        display: flex;
+        /* Enforce flex */
+        justify-content: space-between;
+        /* Navbar items apart */
+        align-items: center;
+        /* Vertically centered */
         background-color: rgba(10, 10, 10, 0.95);
         backdrop-filter: blur(10px);
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: 80px;
-        /* Fixed height for stability */
+        width: 100vw;
+        /* Full viewport width */
         top: 0;
         left: 0;
         z-index: 1001;
+        box-sizing: border-box;
+        /* Crucial for padding */
     }
 
     .navbar.scrolled {
-        padding: 1rem 2rem;
         height: 70px;
+        /* Padding remains handled by base class */
     }
 
     /* Logo - Always on top */
@@ -375,11 +381,17 @@ p {
         position: relative;
         z-index: 1003;
         /* Above overlay */
+        display: flex;
+        align-items: center;
+        height: 100%;
+        /* Match navbar height */
     }
 
     .logo a {
         font-size: 1.5rem;
         display: block;
+        line-height: 1;
+        /* Prevent line-height issues */
     }
 
     /* Hamburger - Always on top */
@@ -395,7 +407,8 @@ p {
         width: 50px;
         height: 50px;
         background: transparent;
-        /* Click area visualization */
+        margin-right: -10px;
+        /* Offset padding to align with edge */
     }
 
     .bar {
@@ -439,10 +452,14 @@ p {
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1002;
         /* Below logo/hamburger, above content */
+        overflow-y: auto;
+        /* Allow scrolling on small screens */
 
         /* Reset any conflicting styles */
-        padding: 0;
+        padding: 4rem 0;
+        /* Vertical padding for content */
         margin: 0;
+        box-sizing: border-box;
     }
 
     .nav-links.active {
@@ -457,6 +474,8 @@ p {
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 0.4s ease, transform 0.4s ease;
+        text-align: center;
+        /* Center text */
     }
 
     /* Staggered Animation */
@@ -491,12 +510,16 @@ p {
         /* Clear fixed navbar */
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+        width: 100%;
+        overflow-x: hidden;
+        /* Prevent horizontal scroll */
     }
 
     .hero-content-wrapper {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
+        width: 100%;
     }
 
     .hero-image-side,
@@ -507,8 +530,16 @@ p {
         align-items: center;
     }
 
+    /* Ensure image fits */
+    .profile-img {
+        max-width: 80vw;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
+        width: 100%;
     }
 }
 
@@ -526,6 +557,8 @@ p {
         background: transparent;
         transform: none;
         backdrop-filter: none;
+        overflow: visible;
+        padding: 0;
     }
 
     .nav-item {
