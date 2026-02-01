@@ -354,10 +354,24 @@ p {
         padding: 1.5rem 2rem;
         background-color: rgba(10, 10, 10, 0.95);
         backdrop-filter: blur(10px);
+        justify-content: space-between;
+        /* Ensure separation */
+        align-items: center;
+        width: 100%;
+        top: 0;
+        left: 0;
     }
 
     .navbar.scrolled {
         padding: 1rem 2rem;
+    }
+
+    .logo {
+        flex: 1;
+        /* Allow logo to take space if needed, or keeping it auto */
+        display: flex;
+        align-items: center;
+        z-index: 1002;
     }
 
     .logo a {
@@ -422,10 +436,15 @@ p {
 
     /* Hamburger Menu Icon */
     .hamburger {
-        display: block;
+        display: flex;
+        /* Flex to align bars internally */
+        flex-direction: column;
+        justify-content: center;
         cursor: pointer;
         z-index: 1002;
         padding: 10px;
+        margin-left: auto;
+        /* Push to right if flex fails */
     }
 
     .bar {
