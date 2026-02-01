@@ -24,10 +24,31 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="nav-text">Contact</span>
                     </a>
                 </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
         `;
 
         const navbar = document.querySelector('.navbar');
+        const hamburger = document.querySelector('.hamburger');
+        const navLinksContainer = document.querySelector('.nav-links');
+
+        // Mobile Menu Toggle
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinksContainer.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-item').forEach(n => n.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinksContainer.classList.remove('active');
+            }));
+        }
 
         // Scroll Effect
         window.addEventListener('scroll', () => {
