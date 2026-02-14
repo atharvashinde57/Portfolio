@@ -187,6 +187,22 @@ p {
     color: var(--bg-color);
 }
 
+.btn-small {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.85rem;
+}
+
+.btn-accent {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+}
+
 /* Social Icons */
 .social-icon {
     font-size: 1.8rem;
